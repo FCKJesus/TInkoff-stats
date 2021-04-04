@@ -10,8 +10,8 @@ class InvesAccount:
 		self.BROKER_ACCOUNT_ID=''#Можно получить в  get_accounts()
 		self.client = tinvest.SyncClient(self.TOKEN)
 		self.moscow_tz = timezone('Europe/Moscow')
-		self.from_ = self.moscow_tz.localize(datetime(2020, 1, 1, 0, 0))
-		self.now = self.moscow_tz.localize(datetime.now())
+		self.FROM_ = self.moscow_tz.localize(datetime(2020, 1, 1, 0, 0))
+		self.NOW = self.moscow_tz.localize(datetime.now())
 
 
 	def get_accounts(self):#Получение BROKER_ACCOUNT_ID
@@ -41,7 +41,7 @@ class InvesAccount:
 			try:
 				figi = self.STOCKS[ticker]
 				name = self.NAME[ticker]
-				operations = self.client.get_operations(from_=self.from_, to=self.now, figi=figi, broker_account_id=self.BROKER_ACCOUNT_ID).json()
+				operations = self.client.get_operations(from_=self.FROM, to=self.NOW, figi=figi, broker_account_id=self.BROKER_ACCOUNT_ID).json()
 				trades = json.loads(operations)['payload']['operations']
 				if trades:
 					payment_usd = 0
