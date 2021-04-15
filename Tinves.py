@@ -10,7 +10,7 @@ class InvesAccount:
 		self.BROKER_ACCOUNT_ID=''#Можно получить в  get_accounts()
 		self.client = tinvest.SyncClient(self.TOKEN)
 		self.moscow_tz = timezone('Europe/Moscow')
-		self.FROM_ = self.moscow_tz.localize(datetime(2020, 1, 1, 0, 0))
+		self.FROM = self.moscow_tz.localize(datetime(2020, 1, 1, 0, 0))
 		self.NOW = self.moscow_tz.localize(datetime.now())
 
 
