@@ -58,9 +58,9 @@ class InvesAccount:
 						if payment_usd != 0:
 							print(name, payment_usd + self.ticker_balance[ticker],'USD')
 						if payment_rub != 0:
-							print(name, payment_usd + self.ticker_balance[ticker],'USD')
+							print(name, payment_rub + self.ticker_balance[ticker],'RUB')
 						if payment_eur != 0:
-							print(name, payment_usd + self.ticker_balance[ticker],'USD')
+							print(name, payment_eur + self.ticker_balance[ticker],'EUR')
 					else:
 						if payment_usd != 0:
 							print(name, payment_usd,'USD')
