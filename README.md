@@ -5,9 +5,11 @@
 pip install tinvest
 pip install pytz
 ```
-Для работы скрипта нужно установить три переменных:
+Быстрый старт:
+broker_account_id -  опционально, если есть несколько счетов
 ```
-TOKEN=some_tinkoff_token
-BROKER_ACCOUNT_ID=some_broker_account
-FROM_=01.06.2020
+tinkoff = InvesAccount(key)
+tinkoff.get_market_stocks()
+tinkoff.get_portfolio(broker_account_id)
+tinkoff.get_trades_sum(ticker, broker_account_id)
 ```
